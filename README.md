@@ -44,21 +44,13 @@ module exp127(
 input wire clk, // Clk input
 
 output reg [3:0] count //4-bit counter output
-
 );
-
 always @(posedge clk) begin
-
 if (count ==4'b1111) // Reset when count reaches 15
-
     count <=4'b0000;
-    
 else 
-
     count <= count + 1; // Increment count
-    
 end
-
 endmodule
 
 
