@@ -39,6 +39,29 @@ In timing diagram Q0 is changing as soon as the negative edge of clock pulse is 
  Developed by:KESHAVARTHINI B  RegisterNumber: 24900033
 */
 
+module exp127(
+
+input wire clk, // Clk input
+
+output reg [3:0] count //4-bit counter output
+
+);
+
+always @(posedge clk) begin
+
+if (count ==4'b1111) // Reset when count reaches 15
+
+    count <=4'b0000;
+    
+else 
+
+    count <= count + 1; // Increment count
+    
+end
+
+endmodule
+
+
 **RTL LOGIC FOR 4 Bit Ripple Counter**
 
 ![Screenshot (75)](https://github.com/user-attachments/assets/74277fc2-b6cc-4825-8a4c-93ac076dcd78)
